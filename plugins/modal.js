@@ -61,6 +61,9 @@ $.modal = function(options) {
             $kmodal.classList.add('hide')
             setTimeout(() => {
                 $kmodal.classList.remove('hide')
+                if (typeof options.onClose === 'function') {
+                    options.onClose()
+                }
                 closing = false
             }, ANIMATION_SPEED)
         }
